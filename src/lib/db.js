@@ -4,71 +4,58 @@ import { DB_URI } from "$env/static/private";
 const client = new MongoClient(DB_URI);
 
 await client.connect();
-const db = client.db("ScreenstackDB"); // select database
+const db = client.db("MyProject"); // select database
 
-//////////////////////////////////////////
-// Movies
-//////////////////////////////////////////
-
-// Get all movies
-async function getMovies() {
-  let movies = [];
+// Get all crochet projects
+async function getCrochets() {
+  let crochet = [];
   try {
-    const collection = db.collection("movies");
+    const collection = db.collection("crochet");
 
-    // You can specify a query/filter here
-    // See https://www.mongodb.com/docs/drivers/node/current/fundamentals/crud/query-document/
     const query = {};
 
     // Get all objects that match the query
-    movies = await collection.find(query).toArray();
-    movies.forEach((movie) => {
-      movie._id = movie._id.toString(); // convert ObjectId to String
+    crochet = await collection.find(query).toArray();
+    crochet.forEach((crochet) => {
+      crochet._id = crochet._id.toString(); // convert ObjectId to String
     });
   } catch (error) {
     console.log(error);
     // TODO: errorhandling
   }
-  return movies;
+  
+  return crochet;
 }
 
-// Get movie by id
-async function getMovie(id) {
-  let movie = null;
+// Get crochet project by id
+async function getCrochet(id) {
+  let crochet = null;
   try {
-    const collection = db.collection("movies");
-    const query = { _id: new ObjectId(id) }; // filter by id
-    movie = await collection.findOne(query);
+    const collection = db.collection("crochet");
+    const query = { _id: id }; //id von mongoDB
+    crochet = await collection.findOne(query);
 
-    if (!movie) {
-      console.log("No movie with id " + id);
+    if (!crochet) {
+      console.log("No collection with id " + id);
       // TODO: errorhandling
     } else {
-      movie._id = movie._id.toString(); // convert ObjectId to String
+      crochet._id = crochet._id.toString(); // convert ObjectId to String
     }
   } catch (error) {
     // TODO: errorhandling
     console.log(error.message);
   }
-  return movie;
+  return crochet;
 }
 
 // create movie
-// Example movie object:
-/* 
-{ 
-  title: "Das Geheimnis von Altura",
-  year: 2024,
-  length: "120 Minuten"
-} 
-*/
-async function createMovie(movie) {
-  movie.poster = "/images/placeholder.jpg"; // default poster
-  movie.actors = [];
-  movie.watchlist = false;
+async function createCrochet(crochet) {
+  crochet.image = "/images/placeholder.jpg"; // default poster
+  crochet.hooksize = [];
+  crochet.time = false;
   try {
-    const collection = db.collection("movies");
-    const result = await collection.insertOne(movie);
+    const collection = db.collection("crochet");
+    const result = await collection.insertOne(crochet);
     return result.insertedId.toString(); // convert ObjectId to String
   } catch (error) {
     // TODO: errorhandling
@@ -78,36 +65,20 @@ async function createMovie(movie) {
 }
 
 // update movie
-// Example movie object:
-/* 
-{ 
-  _id: "6630e72c95e12055f661ff13",
-  title: "Das Geheimnis von Altura",
-  year: 2024,
-  length: "120 Minuten",
-  actors: [
-    "Lena Herzog",
-    "Maximilian Schröder",
-    "Sophia Neumann"
-  ],
-  poster: "/images/Altura.png",
-  watchlist: false
-} 
-*/
 // returns: id of the updated movie or null, if movie could not be updated
-async function updateMovie(movie) {
+async function updateCrochet(crochet) {
   try {
-    let id = movie._id;
-    delete movie._id; // delete the _id from the object, because the _id cannot be updated
-    const collection = db.collection("movies");
-    const query = { _id: new ObjectId(id) }; // filter by id
-    const result = await collection.updateOne(query, { $set: movie });
+    let id = crochet._id;
+    delete crochet._id; // delete the _id from the object, because the _id cannot be updated
+    const collection = db.collection("crochet");
+    const query = { _id: id }; // filter by id
+    const result = await collection.updateOne(query, { $set: crochet });
 
     if (result.matchedCount === 0) {
-      console.log("No movie with id " + id);
+      console.log("No crochet project with id " + id);
       // TODO: errorhandling
     } else {
-      console.log("Movie with id " + id + " has been updated.");
+      console.log("Crochet project with id " + id + " has been updated.");
       return id;
     }
   } catch (error) {
@@ -119,10 +90,10 @@ async function updateMovie(movie) {
 
 // delete movie by id
 // returns: id of the deleted movie or null, if movie could not be deleted
-async function deleteMovie(id) {
+async function deleteCrochet(id) {
   try {
-    const collection = db.collection("movies");
-    const query = { _id: new ObjectId(id) }; // filter by id
+    const collection = db.collection("crochet");
+    const query = { _id: id }; // filter by id
     const result = await collection.deleteOne(query);
 
     if (result.deletedCount === 0) {
@@ -140,9 +111,9 @@ async function deleteMovie(id) {
 
 // export all functions so that they can be used in other files
 export default {
-  getMovies,
-  getMovie,
-  createMovie,
-  updateMovie,
-  deleteMovie,
+  getCrochets,
+  getCrochet,
+  createCrochet,
+  updateCrochet,
+  deleteCrochet,
 };
