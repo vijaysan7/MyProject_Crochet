@@ -10,6 +10,7 @@
     </h3>
     <p>Level: {crochet.schwierigkeitslevel}</p>
     <p>Dauer: {crochet.time}</p>
+    <slot></slot>
   </div>
 </div>
 
@@ -19,7 +20,7 @@
     border-radius: 10px;
     padding: 15px;
     margin: 15px;
-    background-color: #f9f9f9;
+    background-color: #fcf9fa;
     max-width: 250px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -37,13 +38,13 @@
   }
 
   .crochet-title a {
-    color: #333;
+    color: #0b0b0b;
     font-size: 0.7em;
     text-decoration: none;
   }
 
   .crochet-details p {
-    color: #666;
+    color: #464545;
     margin: 5px 0;
   }
 </style>

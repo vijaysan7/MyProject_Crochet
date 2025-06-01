@@ -1,37 +1,86 @@
 <script>
-  import "./styles.css";
   let { children } = $props();
 </script>
 
-<nav
-  class="navbar navbar-expand-lg bg-body-tertiary bg-dark"
-  data-bs-theme="dark"
->
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Home</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/crochet"
-            >Collections</a
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<div class="layout">
+  <nav class="sidebar">
+    <a href="/" class="logo">CrochetApp</a>
+    <ul>
+      <li><a href="/crochet">My Projects</a></li>
+      <li><a href="/crochet/inspo">My Inspo</a></li>
+      <li><a href="/crochet/create" class="add">+ Add Project</a></li>
+    </ul>
+  </nav>
 
-<div class="container mt-3">
-  {@render children()}
+  <main class="main-content">
+    {@render children()}
+  </main>
 </div>
+
+<style>
+  .layout {
+    display: flex;
+    height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  }
+
+  .sidebar {
+    width: 220px;
+    background-color: #f7c8d0;
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5c2c32;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .sidebar ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .sidebar li {
+    margin: 1rem 0;
+  }
+
+  .sidebar a {
+    text-decoration: none;
+    color: #5c2c32;
+    font-size: 1.1rem;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 12px;
+    transition: background 0.2s;
+  }
+
+  .sidebar a:hover {
+    background-color: #fcd5ce;
+  }
+
+  .sidebar a.add {
+    background-color: #fcd5ce;
+    font-weight: bold;
+    color: #000;
+  }
+
+  .sidebar a.add:hover {
+    background-color: #fbb4a4;
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 2rem;
+    background-color: #fefef9;
+    overflow-y: auto;
+  }
+</style>
+

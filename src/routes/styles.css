@@ -1,4 +1,32 @@
 body {
-    background-color: black;
-    color: white;
+  background-color: #fefef9; /* sehr helles Beige als Grundton */
+  color: #2d2d2d;
+}
+
+/* Navbar pastell-rosé */
+.navbar {
+  background-color: #f7c8d0 !important;
+}
+
+/* Links leicht dunkler rosé */
+.nav-link {
+  color: #5c2c32 !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+  color: #a3425c !important;
+}
+
+/* Add-Button abheben */
+.btn-outline-info {
+  background-color: #fcd5ce;
+  color: #5f2c2c;
+  border: none;
+}
+
+.btn-outline-info:hover {
+  background-color: #fbb4a4;
+  color: white;
 }

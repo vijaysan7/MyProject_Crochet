@@ -6,11 +6,11 @@ export const actions = {
     let crochet = {
 
     name: data.get("name"),
-    level: data.get("level"),
-    time: data.get("time"),
+    pattern: data.get("pattern"),
     material: data.get("material"),
     hook_size: data.get("hook_size"),
-    pattern: data.get("pattern"),
+    time: data.get("time"),
+    schwierigkeitslevel: data.get("schwierigkeitslevel"),
     status: data.get("status"),
     };
 

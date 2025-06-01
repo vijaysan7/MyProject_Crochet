@@ -1,7 +1,7 @@
 import db from "$lib/db.js";
 
 export async function load() {
-  return {
-    crochets: await db.getCrochets()
-  };
+const all = await db.getCrochets();
+  const project = all.filter(crochet => crochet.status && crochet.status !== "offen"); // Nur mit Status
+  return { project };
 }

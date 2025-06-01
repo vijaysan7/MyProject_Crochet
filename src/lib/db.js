@@ -32,7 +32,7 @@ async function getCrochet(id) {
   let crochet = null;
   try {
     const collection = db.collection("crochet");
-    const query = { _id: id }; //id von mongoDB
+    const query = { _id: new ObjectId(id) }; //id von mongoDB
     crochet = await collection.findOne(query);
 
     if (!crochet) {
@@ -51,8 +51,7 @@ async function getCrochet(id) {
 // create movie
 async function createCrochet(crochet) {
   crochet.image = "/images/placeholder.jpg"; // default poster
-  crochet.hooksize = [];
-  crochet.time = false;
+
   try {
     const collection = db.collection("crochet");
     const result = await collection.insertOne(crochet);
@@ -71,7 +70,7 @@ async function updateCrochet(crochet) {
     let id = crochet._id;
     delete crochet._id; // delete the _id from the object, because the _id cannot be updated
     const collection = db.collection("crochet");
-    const query = { _id: id }; // filter by id
+    const query = { _id: new ObjectId(id) }; // filter by id
     const result = await collection.updateOne(query, { $set: crochet });
 
     if (result.matchedCount === 0) {
@@ -93,7 +92,7 @@ async function updateCrochet(crochet) {
 async function deleteCrochet(id) {
   try {
     const collection = db.collection("crochet");
-    const query = { _id: id }; // filter by id
+    const query = { _id: new ObjectId(id) }; // filter by id
     const result = await collection.deleteOne(query);
 
     if (result.deletedCount === 0) {
