@@ -1,0 +1,33 @@
+.button-main {
+  background-color: #f7c8d0;
+  color: #5c2c32;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+}
+
+.button-main:hover {
+  background-color: #e58c86;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #a3425c;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+  color: #802b44;
+}

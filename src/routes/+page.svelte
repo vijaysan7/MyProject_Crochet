@@ -43,14 +43,14 @@
 <div class="circle-menu-grid">
   <a href="/crochet" class="circle-card">
     <img src="/images/1.jpg" alt="My Projects" />
-    <p>My Projects</p>
+    <p>myProjects</p>
   </a>
   <a href="/crochet/inspo" class="circle-card">
     <img src="/images/2.jpg" alt="My Inspo" />
-    <p>My Inspo</p>
+    <p>myInspo</p>
   </a>
   <a href="/crochet/create" class="circle-card">
     <img src="/images/3.jpg" alt="Add Project" />
-    <p>Add Project</p>
+    <p>newProject</p>
   </a>
 </div>

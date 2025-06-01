@@ -1,12 +1,15 @@
 <script>
   import "./stylenew.css";
+  import "$lib/components/style.css";
   let { form } = $props();
 </script>
+
+<a href="/crochet" class="back-link">← Zurück zur Übersicht</a>
 
 <div class="form-container">
 <div class="form-card">
   <form method="POST" action="?/create" class="form-box">
-    <a href="/crochet" class="back-link">Zurück zur Übersicht</a>
+    
     
     {#if form?.success}
       <p class="success">✅ Projekt erfolgreich erstellt!</p>
@@ -67,7 +70,7 @@
         <textarea id="pattern" name="pattern" rows="3" placeholder="kleine Beschreibung des Musters"></textarea>
     </div>
 
-    <button type="submit" class="submit-button">Projekt hinzufügen</button>
+    <button type="submit" class="button-main">Projekt hinzufügen</button>
   </form>
 </div>
 </div>

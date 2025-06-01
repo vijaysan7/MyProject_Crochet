@@ -1,0 +1,39 @@
+.project-detail-card {
+  background-color: white;
+  border-radius: 20px;
+  padding: 2rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+  max-width: 850px;
+  margin: 2rem auto;
+}
+
+.project-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.image-side {
+  flex: 0 0 280px;
+}
+
+.crochet-image {
+  width: 100%;
+  max-width: 280px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.info-side {
+  flex: 1;
+  font-size: 1rem;
+  color: #333; 
+  padding-left: 1rem
+
+}
+
+.info-side p {
+  margin: 0.5rem 0;
+  color: #5c2c32;
+}

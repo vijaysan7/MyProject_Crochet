@@ -15,36 +15,45 @@
 </div>
 
 <style>
-  .crochet-card {
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 15px;
-    background-color: #fcf9fa;
-    max-width: 250px;
-    text-align: center;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    transition: box-shadow 0.2s;
-  }
+.crochet-card {
+  background-color: #f8eff1;
+  border-radius: 16px;
+  padding: 1.2rem;
+  margin: 1rem;
+  max-width: 260px;
+  text-align: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+}
 
-  .crochet-card:hover {
-    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-  }
+.crochet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.1);
+}
 
-  .crochet-image {
-    width: 100%;
+.crochet-image {
+  width: 100%;
     border-radius: 20px;
     margin-bottom: 15px;
-  }
+}
 
-  .crochet-title a {
-    color: #0b0b0b;
-    font-size: 0.7em;
-    text-decoration: none;
-  }
+.crochet-title a {
+  color: #5c2c32;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
 
-  .crochet-details p {
-    color: #464545;
-    margin: 5px 0;
-  }
+.crochet-title a:hover {
+  text-decoration: underline;
+}
+
+.crochet-details p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+  color: #6b4b50;
+}
 </style>

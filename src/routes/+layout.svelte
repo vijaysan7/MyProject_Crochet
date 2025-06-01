@@ -1,4 +1,5 @@
 <script>
+  import "./styles.css"
   let { children } = $props();
 </script>
 
@@ -6,9 +7,9 @@
   <nav class="sidebar">
     <a href="/" class="logo">CrochetApp</a>
     <ul>
-      <li><a href="/crochet">My Projects</a></li>
-      <li><a href="/crochet/inspo">My Inspo</a></li>
-      <li><a href="/crochet/create" class="add">+ Add Project</a></li>
+      <li><a href="/crochet">myProjects</a></li>
+      <li><a href="/crochet/inspo">myInspo</a></li>
+      <li><a href="/crochet/create" class="add">+ newProject</a></li>
     </ul>
   </nav>
 
@@ -17,70 +18,4 @@
   </main>
 </div>
 
-<style>
-  .layout {
-    display: flex;
-    height: 100vh;
-    font-family: 'Segoe UI', sans-serif;
-  }
-
-  .sidebar {
-    width: 220px;
-    background-color: #f7c8d0;
-    padding: 2rem 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-    box-shadow: 2px 0 8px rgba(0, 0, 0, 0.05);
-  }
-
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #5c2c32;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-
-  .sidebar li {
-    margin: 1rem 0;
-  }
-
-  .sidebar a {
-    text-decoration: none;
-    color: #5c2c32;
-    font-size: 1.1rem;
-    display: block;
-    padding: 0.5rem;
-    border-radius: 12px;
-    transition: background 0.2s;
-  }
-
-  .sidebar a:hover {
-    background-color: #fcd5ce;
-  }
-
-  .sidebar a.add {
-    background-color: #fcd5ce;
-    font-weight: bold;
-    color: #000;
-  }
-
-  .sidebar a.add:hover {
-    background-color: #fbb4a4;
-  }
-
-  .main-content {
-    flex: 1;
-    padding: 2rem;
-    background-color: #fefef9;
-    overflow-y: auto;
-  }
-</style>
 
