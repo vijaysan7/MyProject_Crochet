@@ -1,12 +1,18 @@
 <script>
-  let { crochet } = $props();
+  export let crochet;
+  // edit für status dropdown
+  export let editable = false; 
 </script>
+
 
 <div class="crochet-card">
   <img class="crochet-image" src={crochet.image} alt={crochet.name} />
   <div class="crochet-details">
     <h3 class="crochet-title">
-      <a href={'/crochet/' + crochet._id}>{crochet.name}</a>
+      <a href={`/crochet/${crochet._id}${editable ? '?editStatus=true' : ''}`}>
+  {crochet.name}
+</a>
+
     </h3>
     <p>Level: {crochet.schwierigkeitslevel}</p>
     <p>Dauer: {crochet.time}</p>

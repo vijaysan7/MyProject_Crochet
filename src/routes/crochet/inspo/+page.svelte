@@ -1,9 +1,9 @@
 <script>
     import CrochetCard from "$lib/components/CrochetCard.svelte";
     import "$lib/components/style.css";
-;
     let { data } = $props();
 </script>
+
 
 <h2>Meine Inspirationen</h2>
 <p><i>Daten und Bilder generiert mit ChatGPT und DALL-E</i></p>

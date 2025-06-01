@@ -7,6 +7,15 @@ export async function load({ params }) {
 }
 
 export const actions = {
+  updateStatus: async ({ request }) => {
+    const data = await request.formData();
+    const id = data.get("id");
+    const status = data.get("status");
+
+    await db.updateCrochet({ _id: id, status });
+    return { success: true };
+  },
+  
   delete: async ({ request }) => {
     const data = await request.formData();
 

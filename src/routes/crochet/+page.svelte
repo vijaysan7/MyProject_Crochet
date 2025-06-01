@@ -9,7 +9,7 @@
 <div class="row mt-3">
   {#each data.project as crochet}
     <div class="col-sm-6 col-md-4 col-lg-3 mb-2 gx-2">
-      <CrochetCard {crochet}></CrochetCard>
+      <CrochetCard {crochet} editable={true} />
     </div>
   {/each}
 </div>

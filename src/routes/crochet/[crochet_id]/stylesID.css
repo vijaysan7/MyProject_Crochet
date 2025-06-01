@@ -37,3 +37,13 @@
   margin: 0.5rem 0;
   color: #5c2c32;
 }
+
+.form-box-style {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #e9cbd3;
+  border-radius: 10px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+}

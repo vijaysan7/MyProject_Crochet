@@ -14,7 +14,7 @@ export const actions = {
     const data = await request.formData();
     const id = data.get("id");
     if (id) {
-      await db.updateCrochet({ _id: new ObjectId(id), status: "in Arbeit" });
+      await db.updateCrochet({ _id: new ObjectId(id), status: "in Bearbeitung" });
     }
     throw redirect(303, "/crochet");
   }
