@@ -1,14 +1,13 @@
 body {
-  background-color: #fefef9; /* sehr helles Beige als Grundton */
+  background-color: #fefef9; 
   color: #2d2d2d;
 }
 
-/* Navbar pastell-rosé */
+
 .navbar {
   background-color: #f7c8d0 !important;
 }
 
-/* Links leicht dunkler rosé */
 .nav-link {
   color: #5c2c32 !important;
   font-weight: 500;
@@ -19,17 +18,6 @@ body {
   color: #a3425c !important;
 }
 
-/* Add-Button abheben */
-.btn-outline-info {
-  background-color: #fcd5ce;
-  color: #5f2c2c;
-  border: none;
-}
-
-.btn-outline-info:hover {
-  background-color: #fbb4a4;
-  color: white;
-}
 
  .layout {
     display: flex;
@@ -79,11 +67,6 @@ body {
     background-color: #fcd5ce;
   }
 
-  .sidebar a.add {
-    background-color: #fcd5ce;
-    font-weight: bold;
-    color: #000;
-  }
 
   .sidebar a.add:hover {
     background-color: #fbb4a4;

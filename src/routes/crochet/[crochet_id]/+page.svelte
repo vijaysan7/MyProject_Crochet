@@ -17,7 +17,7 @@
     <div class="header-row">
     <h2>{crochet.name}</h2>
 
-    <form method="POST" action="?/delete" class="delete-form">
+    <form method="POST" action="?/delete">
           <input type="hidden" name="id" value={crochet._id} />
           <button type="submit" class="button-main delete-button">Projekt löschen</button>
         </form>
