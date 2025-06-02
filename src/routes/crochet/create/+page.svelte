@@ -58,7 +58,7 @@
       <div style="flex: 1;">
         <label for="status">Status</label>
         <select id="status" name="status">
-          <option value="">kein Status</option>
+          <option value="">Bitte wählen</option>
           <option value="offen">offen</option>
           <option value="in Arbeit">in Arbeit</option>
           <option value="abgeschlossen">abgeschlossen</option>
